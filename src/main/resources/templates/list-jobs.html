@@ -12,7 +12,21 @@
 
     <!-- TODO #3 - Use the same list display from search.html -->
 
+    <h3 th:text="${resultsHeading}"></h3>
+
+    <div>
+        <table th:each="job : ${jobs}" th:class="job-listing">
+            <tbody >
+            <tr th:each="key : ${job.keySet()}">
+                <td th:text="${key}"></td>
+                <td th:text="${job.get(key)}"></td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
 </div>
+
 
 </body>
 </html>
